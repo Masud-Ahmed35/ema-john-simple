@@ -10,7 +10,7 @@ const Product = ({ product, handleAddToCart }) => {
             <img src={img} alt="" />
             <div className="product-info">
                 <p className='product-name'>{name}</p>
-                <p style={{ fontWeight: 500 }}>Price: ${price}</p>
+                <p className='price-style' style={{ fontWeight: 500 }}>Price: ${price}</p>
                 <div className='product-info-more'>
                     <p><small>Manufacturer: {seller}</small></p>
                     <p><small>Ratings: {ratings} Star</small></p>

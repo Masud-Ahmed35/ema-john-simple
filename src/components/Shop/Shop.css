@@ -14,3 +14,42 @@
 .cart-container {
     background-color: rgba(255, 153, 0, 0.3);
 }
+
+.btn-clear-cart {
+    background-color: #FF3030;
+    border-radius: 4px;
+    border: 0;
+    width: 232px;
+    height: 48px;
+    color: white;
+    font-size: 21px;
+}
+
+.btn-clear-cart:hover {
+    background-color: #d80606;
+    cursor: pointer;
+}
+
+.trash-icon {
+    margin-left: 10px;
+}
+
+.btn-preview-orders {
+    margin-top: 15px;
+    width: 232px;
+    height: 48px;
+    background: #FF9900;
+    border-radius: 4px;
+    border: 0;
+    color: white;
+    font-size: 21px;
+}
+
+.arrow-icon {
+    margin-left: 10px;
+}
+
+.btn-preview-orders:hover {
+    background: #d88202;
+    cursor: pointer;
+}

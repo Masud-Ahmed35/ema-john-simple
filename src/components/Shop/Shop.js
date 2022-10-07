@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
-import { addToDb, getStoredCart } from '../../utilities/fakedb'
+import { addToDb, deleteShoppingCart, getStoredCart } from '../../utilities/fakedb'
 import './Shop.css'
+import { Link, useLoaderData } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Shop = () => {
-    const [products, setProducts] = useState([]);
+    const products = useLoaderData();
+
     const [cart, setCart] = useState([]);
-
-    useEffect(() => {
-        fetch(`https://raw.githubusercontent.com/ProgrammingHero1/ema-john-resources/main/fakeData/products.json`)
-            .then(res => res.json())
-            .then(data => setProducts(data))
-
-    }, [])
-
     useEffect(() => {
         const storedCart = getStoredCart();
         const savedCart = [];
@@ -46,6 +42,11 @@ const Shop = () => {
         addToDb(selectedProduct.id)
     }
 
+    const handleClearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
+    }
+
     return (
         <div className='shop-container'>
             <div className="product-container">
@@ -58,7 +59,12 @@ const Shop = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart
+                    cart={cart}
+                    handleClearCart={handleClearCart}
+                >
+                    <Link to='/orders'><button className='btn-preview-orders'>Preview Orders <FontAwesomeIcon className='arrow-icon' icon={faArrowAltCircleRight}></FontAwesomeIcon></button></Link>
+                </Cart>
             </div>
         </div>
     );
