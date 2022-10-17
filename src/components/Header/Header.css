@@ -18,3 +18,17 @@
 .header a:hover {
     color: orange;
 }
+
+.navlink .active {
+    color: orange;
+}
+
+.btn-sign-out {
+    margin-left: 12px;
+    border-radius: 7px;
+}
+
+.btn-sign-out:hover {
+    background-color: cadetblue;
+    color: white;
+}
