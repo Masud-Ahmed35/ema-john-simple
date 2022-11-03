@@ -53,3 +53,20 @@
     background: #d88202;
     cursor: pointer;
 }
+
+.pagination {
+    margin-left: 100px;
+    margin-bottom: 40px;
+}
+
+.pagination button {
+    margin-right: 10px;
+}
+
+.pagination .selected {
+    background-color: goldenrod;
+    border: greenyellow;
+    border-radius: 50%;
+    font-weight: bold;
+    padding: 5px 10px;
+}
